@@ -4,7 +4,11 @@ function Counter() {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        document.title = `You clicked ${count} times`;
+        let title = `You clicked ${count} time`;
+        if (count > 1) {
+            title += `s`;
+        }
+        document.title = title;
     });
 
     return (
